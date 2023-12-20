@@ -1,0 +1,46 @@
+language: eng
+
+# whether to send triggers through c-pod
+send_triggers: False
+trigger_device: cpod
+error_when_no_response_box: False
+break_every_n_trials: 10_000
+break_every_n_trials_training: 10_000
+use_response_device_objects: True
+
+# times
+# -----
+# stimulus presentation times in seconds
+# values in brackets mean that a random value from the interval will be sampled
+times:
+   fix: 0.8
+   blank: 1.
+   stim: 10
+   pre_feedback: 0.1
+   feedback: 0.25
+
+triggers:
+   instructions_start: 150
+   training_start: 151
+   exp_start: 152
+   break: 153
+   fix: 100
+   blank: 101
+   feedback_incorrect: 120
+   feedback_correct: 121
+   'no': 241
+   'yes': 242
+   escape: 246
+
+# responses
+# ---------
+# keys for left and  right responses
+resp_keys: [f, j]
+resp_keys_box: [2, 3]
+resp_names: ['no', 'yes']
+# could add color covers to the resp box for this proc
+
+# whether it is possible to force-quit the procedure
+quit:
+   enable: True
+   button: escape
